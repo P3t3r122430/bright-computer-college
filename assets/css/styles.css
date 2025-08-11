@@ -1,176 +1,142 @@
-/* Global Styles */
+/* ========== Brand Colors ========== */
+:root {
+  --primary-color: #004080;    /* Deep blue */
+  --secondary-color: #e53935;  /* Strong red */
+  --accent-color: #25d366;     /* WhatsApp green */
+  --text-color: #222;
+  --background-color: #fff;
+  --nav-bg-color: #f9f9f9;
+  --nav-text-color: #004080;
+  --nav-hover-color: #e53935;
+}
+
+/* ========== Global ========== */
 body {
   font-family: 'Times New Roman', serif;
   margin: 0;
   padding: 0;
-  color: #333;
-  background-color: #fff;
+  color: var(--text-color);
+  background-color: var(--background-color);
   line-height: 1.6;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  overflow: hidden;
-}
-
-header, footer {
-  background: #002244;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
-header h1, footer p {
-  margin: 0;
-}
-
+/* ========== Left Sidebar Navigation ========== */
 nav {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 1000;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-}
-
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-}
-
-
-/* Hero Section */
-.hero {
-  background: url('../images/hero.jpg') no-repeat center center/cover;
-  color: #fff;
-  height: 300px;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  background-color: var(--nav-bg-color);
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  padding-top: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-direction: column;
+  z-index: 1000;
+  transition: transform 0.3s ease;
 }
 
-.hero h2 {
-  font-size: 2.5em;
-}
-
-/* Section Styling */
-section {
-  padding: 40px 0;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.card {
-  background: #f4f4f4;
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin: 10px;
-  flex: 1;
-  min-width: 250px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.cards {
+.nav-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  height: 100%;
 }
 
-/* Contact Form */
-form {
-  max-width: 600px;
-  margin: auto;
+.nav-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
 }
 
-input, textarea {
+.nav-links {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
 }
 
-button {
-  padding: 10px 20px;
-  background: #004080;
+.nav-links a {
+  color: var(--nav-text-color);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 10px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: var(--nav-hover-color);
   color: #fff;
-  border: none;
+}
+
+/* Main content shifted right to accommodate sidebar */
+main, section, header, footer {
+  margin-left: 240px; /* sidebar width + some padding */
+  padding: 20px 40px 40px 40px;
+}
+
+/* Mobile responsive sidebar toggle */
+.nav-toggle {
+  display: none; /* hide by default */
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  color: var(--primary-color);
   cursor: pointer;
+  z-index: 1100;
 }
 
-button:hover {
-  background: #0066cc;
-}
-
-/* Footer */
-footer {
-  font-size: 0.9em;
-}
-
-/* Gallery */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-.gallery img {
-  width: 100%;
-  height: auto;
-  border: 1px solid #ccc;
-}
-
-/* Responsive Nav */
+/* Sidebar hidden on mobile */
 @media (max-width: 768px) {
   nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+    transform: translateX(-100%);
+  }
+
+  nav.show {
+    transform: translateX(0);
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  main, section, header, footer {
+    margin-left: 0;
+    padding: 20px;
+  }
 }
 
+/* ========== Header Improvements ========== */
+header h1 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 0.3em;
 }
 
-/* Back to Top Button */
-#backToTop {
-  display: none;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: #000;
-  color: white;
-  cursor: pointer;
-  padding: 10px 15px;
-  font-size: 16px;
-  border-radius: 5px;
-  font-family: 'Times New Roman', serif;
+header p {
+  color: #444;
+  font-size: 1rem;
+  margin: 0.2em 0 1em 0;
 }
 
-#backToTop:hover {
-  background-color: #555;
-}
-/* HERO SECTION */
+/* ========== Hero Section ========== */
 .hero {
-  position: relative;
-  background: url('assets/images/hero-bg.jpg') center center / cover no-repeat;
-  height: 80vh;
+  background: url('assets/images/hero-bg.jpg') center center/cover no-repeat;
+  height: 60vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  color: white;
+  color: #fff;
+  position: relative;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .hero::after {
@@ -178,43 +144,93 @@ footer {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5); /* dark overlay */
+  background: rgba(0, 64, 128, 0.7); /* overlay with brand color */
+  z-index: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
 .hero-button {
-  display: inline-block;
-  padding: 0.75em 1.5em;
-  background: #e53935;
+  background-color: var(--secondary-color);
   color: white;
-  text-decoration: none;
-  font-weight: bold;
+  padding: 12px 28px;
+  font-weight: 700;
+  border: none;
   border-radius: 4px;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .hero-button:hover {
-  background: #c62828;
+  background-color: #b32b2b;
 }
-/* Make all text left-aligned on mobile screens */
-@media (max-width: 768px) {
-  body,
-  h1, h2, h3, h4, h5, h6,
-  p,
-  .container,
-  .content,
-  section,
-  article,
-  .hero {
-    text-align: left;
-  }
+
+/* ========== Testimonials Section ========== */
+.testimonials {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  padding: 20px;
+  flex: 1 1 280px;
+  max-width: 300px;
+  font-style: italic;
+  color: #333;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: "“";
+  font-size: 3rem;
+  color: var(--secondary-color);
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.testimonial-author {
+  margin-top: 15px;
+  font-weight: 700;
+  color: var(--primary-color);
+  font-style: normal;
+}
+
+/* ========== Smooth Scroll Link (for JS) ========== */
+html {
+  scroll-behavior: smooth;
 }

@@ -5,99 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bright Computer College</title>
   <link rel="stylesheet" href="assets/css/styles.css"/>
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
-  <header>
-    <h1>Bright Computer College</h1>
-    <p>Located in Kabati – Bright Café, next to Bunker Butchery</p>
-    <p>Email: <a href="mailto:brightcyber23@gmail.com">brightcyber23@gmail.com</a> | Phone: 0768 726 828</p>
-  </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="courses.html">Courses</a>
-    <a href="services.html">Services</a>
-    <a href="shop.html">Shop</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+    <div class="nav-container">
+      <div class="nav-brand">Bright Computer College</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="services.html">Services</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-toggle" id="navToggle">&#9776;</div>
+    </div>
   </nav>
 
-  <section class="reveal">
-    <h2>Welcome to Bright Computer College</h2>
-    <p>Empowering our community through technology and education. Join us and gain valuable digital skills in just two months.</p>
-    
-    <h3>Current Intake Ongoing</h3>
-    <ul>
-      <li>Duration: 2 Months</li>
-      <li>Time: 2 Hours Per Day</li>
-      <li>Registration: KES 200</li>
-      <li>Fees: KES 4,000 (Total: KES 4,200)</li>
-    </ul>
+  <main>
+    <header>
+      <h1>Bright Computer College</h1>
+      <p>Located in Kabati – Bright Café, next to Bunker Butchery</p>
+      <p>Email: <a href="mailto:brightcyber23@gmail.com">brightcyber23@gmail.com</a> | Phone: 0768 726 828</p>
+    </header>
 
-    <h3>We Offer:</h3>
-    <ul>
-      <li>Computer Classes (Intro, Office, Typing, Internet)</li>
-      <li>Cyber Services</li>
-      <li>Stationery & Bookshop</li>
-      <li>Sales: Chargers, SD Cards, T-Shirts, Office Equipment</li>
-    </ul>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Empowering Digital Skills in Kabati</h1>
+        <p>Join Bright Computer College and gain valuable tech skills in just two months.</p>
+        <a href="contact.html" class="hero-button">Enroll Now</a>
+      </div>
+    </section>
 
-    <a href="contact.html">
-      <button>Enroll Now</button>
-    </a>
-  <section class="reveal">
+    <section>
+      <h2>Welcome to Bright Computer College</h2>
+      <p>Empowering our community through technology and education. Join us and gain valuable digital skills in just two months.</p>
 
-  <footer>
-    <p>&copy; 2025 Bright Computer College. All rights reserved.</p>
-  </footer>
-  <script>
-  window.addEventListener('scroll', function () {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 10) {
-      nav.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
-</script>
-<button id="backToTop" title="Go to top">↑</button>
-<script>
-  const backToTop = document.getElementById("backToTop");
+      <h3>Current Intake Ongoing</h3>
+      <ul>
+        <li>Duration: 2 Months</li>
+        <li>Time: 2 Hours Per Day</li>
+        <li>Registration: KES 200</li>
+        <li>Fees: KES 4,000 (Total: KES 4,200)</li>
+      </ul>
 
-  window.onscroll = function () {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      backToTop.style.display = "block";
-    } else {
-      backToTop.style.display = "none";
-    }
-  };
+      <h3>We Offer:</h3>
+      <ul>
+        <li>Computer Classes (Intro, Office, Typing, Internet)</li>
+        <li>Cyber Services</li>
+        <li>Stationery & Bookshop</li>
+        <li>Sales: Chargers, SD Cards, T-Shirts, Office Equipment</li>
+      </ul>
 
-  backToTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
-<script>
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-</script>
-<!-- ScrollReveal JS -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<script>
-  ScrollReveal({ 
-    reset: false,
-    distance: '60px',
-    duration: 800,
-    delay: 100 
-  });
+      <a href="contact.html">
+        <button>Enroll Now</button>
+      </a>
+    </section>
 
-  ScrollReveal().reveal('section, .reveal', { origin: 'bottom' });
-</script>
+    <section class="testimonials">
+      <h2>What Our Students Say</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <p>Bright Computer College helped me master computer skills quickly and confidently. The trainers are awesome!</p>
+          <div class="testimonial-author">— Jane Mwangi</div>
+        </div>
+        <div class="testimonial-card">
+          <p>The courses are well-structured and affordable. I got a job thanks to the skills I learned here.</p>
+          <div class="testimonial-author">— Daniel Otieno</div>
+        </div>
+        <div class="testimonial-card">
+          <p>Great location and friendly environment. Highly recommend for anyone wanting to upskill in IT.</p>
+          <div class="testimonial-author">— Alice Kamau</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Bright Computer College. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <button id="backToTop" title="Go to top">↑</button>
+  <a href="https://wa.me/254768726828" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">💬</a>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

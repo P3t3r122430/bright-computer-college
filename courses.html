@@ -5,100 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Courses - Bright Computer College</title>
   <link rel="stylesheet" href="assets/css/styles.css"/>
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
-  <header>
-    <h1>Courses We Offer</h1>
-    <p>Master the digital world in just 2 months</p>
-    <p>Email: <a href="mailto:brightcyber23@gmail.com">brightcyber23@gmail.com</a> | Phone: 0768 726 828</p>
-  </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="courses.html">Courses</a>
-    <a href="services.html">Services</a>
-    <a href="shop.html">Shop</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+    <div class="nav-container">
+      <div class="nav-brand">Bright Computer College</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html" class="active">Courses</a>
+        <a href="services.html">Services</a>
+        <a href="shop.html">Shop</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-toggle" id="navToggle">&#9776;</div>
+    </div>
   </nav>
 
-  <section class="reveal">
-    <h2>Full Course Package</h2>
-    <p><strong>Duration:</strong> 2 months</p>
-    <p><strong>Class Time:</strong> 2 hours per day</p>
-    <p><strong>Registration Fee:</strong> KES 200</p>
-    <p><strong>Total Fees:</strong> KES 4,000</p>
-    <p><strong>Total Cost:</strong> KES 4,200</p>
-    <p><strong>Intake:</strong> In Progress</p>
+  <main>
+    <header>
+      <h1>Courses We Offer</h1>
+      <p>Master the digital world in just 2 months</p>
+      <p>Email: <a href="mailto:brightcyber23@gmail.com">brightcyber23@gmail.com</a> | Phone: 0768 726 828</p>
+    </header>
 
-    <h2>Course Modules</h2>
-    <ul>
-      <li>Introduction to Computers</li>
-      <li>Microsoft Windows</li>
-      <li>Microsoft Word</li>
-      <li>Microsoft Excel</li>
-      <li>Microsoft Access</li>
-      <li>Microsoft PowerPoint</li>
-      <li>Microsoft Publisher</li>
-      <li>Adobe PageMaker</li>
-      <li>Internet & Email</li>
-      <li>Keyboarding / Typing Skills</li>
-    </ul>
+    <section>
+      <h2>Full Course Package</h2>
+      <p><strong>Duration:</strong> 2 months</p>
+      <p><strong>Class Time:</strong> 2 hours per day</p>
+      <p><strong>Registration Fee:</strong> KES 200</p>
+      <p><strong>Total Fees:</strong> KES 4,000</p>
+      <p><strong>Total Cost:</strong> KES 4,200</p>
+      <p><strong>Intake:</strong> In Progress</p>
 
-    <p>All lessons are practical and instructor-led. Join today and start your digital journey!</p>
-  <section class="reveal">
+      <h2>Course Modules</h2>
+      <ul>
+        <li>Introduction to Computers</li>
+        <li>Microsoft Windows</li>
+        <li>Microsoft Word</li>
+        <li>Microsoft Excel</li>
+        <li>Microsoft Access</li>
+        <li>Microsoft PowerPoint</li>
+        <li>Microsoft Publisher</li>
+        <li>Adobe PageMaker</li>
+        <li>Internet & Email</li>
+        <li>Keyboarding / Typing Skills</li>
+      </ul>
 
-  <footer>
-    <p>&copy; 2025 Bright Computer College. All rights reserved.</p>
-  </footer>
-  <script>
-  window.addEventListener('scroll', function () {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 10) {
-      nav.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
-    } else {
-      nav.style.boxShadow = 'none';
-    }
-  });
-</script>
-<button id="backToTop" title="Go to top">↑</button>
-<script>
-  const backToTop = document.getElementById("backToTop");
+      <p>All lessons are practical and instructor-led. Join today and start your digital journey!</p>
+    </section>
 
-  window.onscroll = function () {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-      backToTop.style.display = "block";
-    } else {
-      backToTop.style.display = "none";
-    }
-  };
+    <footer>
+      <p>&copy; 2025 Bright Computer College. All rights reserved.</p>
+    </footer>
+  </main>
 
-  backToTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
-<script>
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-</script>
-<!-- ScrollReveal JS -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<script>
-  ScrollReveal({ 
-    reset: false,
-    distance: '60px',
-    duration: 800,
-    delay: 100 
-  });
+  <button id="backToTop" title="Go to top">↑</button>
+  <a href="https://wa.me/254768726828" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">💬</a>
 
-  ScrollReveal().reveal('section, .reveal', { origin: 'bottom' });
-</script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
