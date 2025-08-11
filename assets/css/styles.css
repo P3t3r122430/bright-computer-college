@@ -1,102 +1,117 @@
-/* ========== Brand Colors ========== */
-:root {
-  --primary-color: #004080;    /* Deep blue */
-  --secondary-color: #e53935;  /* Strong red */
-  --accent-color: #25d366;     /* WhatsApp green */
-  --text-color: #222;
-  --background-color: #fff;
-  --nav-bg-color: #f9f9f9;
-  --nav-text-color: #004080;
-  --nav-hover-color: #e53935;
+/* Reset & basics */
+* {
+  box-sizing: border-box;
 }
-
-/* ========== Global ========== */
-body {
-  font-family: 'Times New Roman', serif;
+body, html {
   margin: 0;
   padding: 0;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  line-height: 1.6;
+  font-family: 'Times New Roman', serif;
+  height: 100%;
+  display: flex;
 }
 
-/* ========== Left Sidebar Navigation ========== */
+/* Sidebar navigation */
 nav {
+  width: 250px;
+  background-color: #222;
+  color: white;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 220px;
-  background-color: var(--nav-bg-color);
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
+  overflow-y: auto;
   transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
+/* Hide sidebar by default on small screens */
+nav.hide {
+  transform: translateX(-100%);
+}
+
+/* Navigation container and links */
 .nav-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding-left: 20px;
   height: 100%;
+  padding: 20px;
 }
 
-.nav-brand {
-  font-weight: bold;
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-  color: var(--primary-color);
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+  user-select: none;
+  color: white;
+  margin-bottom: 20px;
 }
 
+/* Links style */
 .nav-links {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  gap: 15px;
 }
 
 .nav-links a {
-  color: var(--nav-text-color);
+  color: white;
   text-decoration: none;
   font-weight: 600;
-  padding: 12px 10px;
-  margin-bottom: 8px;
+  padding: 8px 12px;
   border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  background-color: var(--nav-hover-color);
-  color: #fff;
+.nav-links a:hover {
+  background-color: #444;
 }
 
-/* Main content shifted right to accommodate sidebar */
-main, section, header, footer {
-  margin-left: 240px; /* sidebar width + some padding */
-  padding: 20px 40px 40px 40px;
+/* Main content shifted right to make space for sidebar */
+main {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
 }
 
-/* Mobile responsive sidebar toggle */
-.nav-toggle {
-  display: none; /* hide by default */
+/* Back to top button fixed bottom right */
+#backToTop {
   position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 28px;
-  color: var(--primary-color);
+  bottom: 30px;
+  right: 30px;
+  display: none;
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 5px;
   cursor: pointer;
   z-index: 1100;
 }
 
-/* Sidebar hidden on mobile */
+/* WhatsApp floating button bottom left */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  font-size: 28px;
+  background-color: #25d366;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 1100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   nav {
+    position: fixed;
+    height: 100%;
     transform: translateX(-100%);
   }
-
   nav.show {
     transform: translateX(0);
   }
@@ -105,132 +120,8 @@ main, section, header, footer {
     display: block;
   }
 
-  main, section, header, footer {
+  main {
     margin-left: 0;
-    padding: 20px;
+    padding: 15px;
   }
-}
-
-/* ========== Header Improvements ========== */
-header h1 {
-  color: var(--primary-color);
-  font-weight: 700;
-  margin-bottom: 0.3em;
-}
-
-header p {
-  color: #444;
-  font-size: 1rem;
-  margin: 0.2em 0 1em 0;
-}
-
-/* ========== Hero Section ========== */
-.hero {
-  background: url('assets/images/hero-bg.jpg') center center/cover no-repeat;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  margin-bottom: 40px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 64, 128, 0.7); /* overlay with brand color */
-  z-index: 0;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  padding: 0 20px;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.2rem;
-}
-
-.hero-button {
-  background-color: var(--secondary-color);
-  color: white;
-  padding: 12px 28px;
-  font-weight: 700;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.hero-button:hover {
-  background-color: #b32b2b;
-}
-
-/* ========== Testimonials Section ========== */
-.testimonials {
-  max-width: 900px;
-  margin: 0 auto 60px auto;
-  text-align: center;
-}
-
-.testimonials h2 {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 20px;
-}
-
-.testimonial-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.testimonial-card {
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-  padding: 20px;
-  flex: 1 1 280px;
-  max-width: 300px;
-  font-style: italic;
-  color: #333;
-  position: relative;
-}
-
-.testimonial-card::before {
-  content: "“";
-  font-size: 3rem;
-  color: var(--secondary-color);
-  position: absolute;
-  top: 10px;
-  left: 20px;
-}
-
-.testimonial-author {
-  margin-top: 15px;
-  font-weight: 700;
-  color: var(--primary-color);
-  font-style: normal;
-}
-
-/* ========== Smooth Scroll Link (for JS) ========== */
-html {
-  scroll-behavior: smooth;
 }
