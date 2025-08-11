@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop - Bright Computer College</title>
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Shop</h1>
+    <p>Quality Stationery & Tech Accessories</p>
+    <p>Email: <a href="mailto:brightcyber23@gmail.com">brightcyber23@gmail.com</a> | Phone: 0768 726 828</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="services.html">Services</a>
+    <a href="shop.html">Shop</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="reveal">
+    <h2>Stationery for School & Office</h2>
+    <ul>
+      <li>JK Copier Papers</li>
+      <li>Exercise Books & Notebooks</li>
+      <li>Pens, Pencils, Rulers</li>
+      <li>Highlighters, Markers</li>
+      <li>Envelopes, Folders, Files</li>
+      <li>Office Supplies & Stationery Kits</li>
+    </ul>
+
+    <h2>Tech Accessories</h2>
+    <ul>
+      <li>Chargers & USB Cables</li>
+      <li>Memory Cards & Flash Disks</li>
+      <li>Earphones & Headphones</li>
+      <li>OTGs, Mouse & Keyboards</li>
+      <li>Extension Cables & Adapters</li>
+      <li>Phone Holders & Small Electronics</li>
+    </ul>
+
+    <p>All products available at our Kabati shop — Bright Café, next to Bunker Butchery. Affordable prices. Walk in today!</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bright Computer College. All rights reserved.</p>
+  </footer>
+
+  <!-- Navigation scroll shadow -->
+  <script>
+    window.addEventListener('scroll', function () {
+      const nav = document.querySelector('nav');
+      nav.style.boxShadow = window.scrollY > 10 ? '0 2px 5px rgba(0, 0, 0, 0.1)' : 'none';
+    });
+  </script>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Go to top">↑</button>
+  <script>
+    const backToTop = document.getElementById("backToTop");
+
+    window.onscroll = function () {
+      backToTop.style.display = (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) ? "block" : "none";
+    };
+
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+  <!-- Header scroll effect -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+
+  <!-- ScrollReveal Animation -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal({ 
+      reset: false,
+      distance: '60px',
+      duration: 800,
+      delay: 100 
+    }).reveal('section, .reveal', { origin: 'bottom' });
+  </script>
+</body>
+</html>
