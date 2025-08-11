@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - Bright Computer College</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Contact Us</h1>
+    <p>Bright Computer College - Kabati (Bright Café, next to Bunker Butchery)</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="services.html">Services</a>
+    <a href="shop.html">Shop</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" style="font-weight: bold;">Contact</a>
+  </nav>
+
+  <section class="reveal">
+    <h2>We’d love to hear from you</h2>
+    <p>If you have any questions, need help, or want to enroll, just fill out the form below and we’ll get back to you shortly.</p>
+
+    <form action="https://formspree.io/f/xyzpnaar" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="_replyto" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="main-content"></div>="contact-email">
+      Or email us directly: <strong>brightcyber23@gmail.com</strong>
+    </div>
+  <section class="reveal">
+
+  <footer>
+    <p>&copy; 2025 Bright Computer College. All rights reserved.</p>
+  </footer>
+<script>
+  window.addEventListener('scroll', function () {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 10) {
+      nav.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
+    } else {
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+<button id="backToTop" title="Go to top">↑</button>
+<script>
+  const backToTop = document.getElementById("backToTop");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  };
+
+  backToTop.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+<script>
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
+<!-- ScrollReveal JS -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  ScrollReveal({ 
+    reset: false,
+    distance: '60px',
+    duration: 800,
+    delay: 100 
+  });
+
+  ScrollReveal().reveal('section, .reveal', { origin: 'bottom' });
+</script>
+</body>
+</html>
